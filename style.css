@@ -1,0 +1,19 @@
+body{
+    direction: rtl;
+    /* background: linear-gradient(to bottom right, red,yellow,green); */
+    background: linear-gradient(to bottom right, #38A3A5, #57CC99, #80ED99);
+    min-height: 100vh;
+}
+.container{
+    text-align: center;
+    display: contents;
+}
+
+label{
+    text-align: center;
+
+}
+
+input{
+    width: 80px;
+}

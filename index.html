@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحاسبة التجريبية</title>
+</head>
+<body>
+    <div class="container">
+        <label for="">الحاسبة التجريبية</label>
+            <div class="required">
+                <label>المطلوب:</label>
+                <br>
+                <input type="number" name="reqHfd" id="reqHfd" placeholder="الحفظ">
+                <input type="number" name="reqMs" id="reqMs" placeholder="الصغرى">
+                <input type="number"  name="reqMk" id="reqMk" placeholder="الكبرى">
+            </div>
+            <br>
+            <div class="achieved">
+                <label>المحقق:</label>
+                <br>
+                <input type="number" name="achHfd" id="achHfd" placeholder="الحفظ">
+                <input type="number" name="achMs" id="achMs" placeholder="الصغرى">
+                <input type="number" name="achMk" id="achMk" placeholder="الكبرى">
+            </div>
+            <br>
+            <input type="number" name="adds" id="adds" placeholder="الاضافات مع الخصم">
+            <p id="result"></p>
+            <button onclick="calcualate()">احسب النسبة</button>
+    </div>
+</body>
+
+<script>
+    function calcualate(){
+
+        numOfReq = 0;
+        res = 0;
+
+        reqHfd = document.getElementById("reqHfd").value;
+        reqMs = document.getElementById("reqMs").value;
+        reqMk = document.getElementById("reqMk").value;
+        
+        achHfd = document.getElementById("achHfd").value;
+        achMs = document.getElementById("achMs").value;
+        achMk = document.getElementById("achMk").value;
+        
+        adds = document.getElementById("adds").value;
+        if( !isEmpty(reqHfd) ){numOfReq++;}
+        if( !isEmpty(reqMs) ){numOfReq++;}
+        if( !isEmpty(reqMk) ){numOfReq++;}
+
+        if( !isEmpty(reqHfd) ){res += (achHfd/reqHfd)/numOfReq;}
+        if( !isEmpty(reqMs) ){res += (achMs/reqMs)/numOfReq;}
+        if( !isEmpty(reqMk) ){res += (achMk/reqMk)/numOfReq;}
+
+
+        // res = ((achHfd/reqHfd)/numOfReq)+((achMs/reqMs)/numOfReq)+((achMk/reqMk)/numOfReq);
+        document.getElementById("result").innerHTML = ((res *100)+adds).toFixed(2) + '%';
+
+    }
+
+
+    function isEmpty(str) {
+    return (!str || str.length === 0 );
+}
+</script>
+</html>
