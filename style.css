@@ -3,17 +3,27 @@ body{
     /* background: linear-gradient(to bottom right, red,yellow,green); */
     background: linear-gradient(to bottom right, #38A3A5, #57CC99, #80ED99);
     min-height: 100vh;
+    text-align: center;
 }
 .container{
+    /* padding-top: 10px; */
+    min-width: 200px;
     text-align: center;
-    display: contents;
-}
-
-label{
-    text-align: center;
-
+    /* display: contents; */
+    border: dashed whitesmoke 5px;
+    margin: 10px;
+    
 }
 
 input{
-    width: 80px;
+    max-width: 50px;
+    margin-right: 5px;
+    text-align: center;
+    
 }
+
+.required, .achieved, .adds{
+    text-align: left;
+    width: 70%;
+}
+
